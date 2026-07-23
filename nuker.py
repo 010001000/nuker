@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 import asyncio
 from collections import defaultdict
@@ -150,9 +151,6 @@ async def direct_ban(member, reason):
         await sec_log(member.guild, "VIOLATOR BANNED", f"{member.mention} has been **banned**.\nReason: {reason}")
     except Exception as e:
         print(f"[-] Ban failed: {e}")
-
-import os
-bot.run(os.getenv("DISCORD_TOKEN"))
 
 join_times = []
 RAID_JOIN_THRESHOLD = 8
