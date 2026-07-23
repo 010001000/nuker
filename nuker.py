@@ -151,7 +151,9 @@ async def direct_ban(member, reason):
     except Exception as e:
         print(f"[-] Ban failed: {e}")
 
-# ====================== EVENTS ======================
+import os
+bot.run(os.getenv("DISCORD_TOKEN"))
+
 join_times = []
 RAID_JOIN_THRESHOLD = 8
 RAID_JOIN_WINDOW = 10
