@@ -398,5 +398,5 @@ async def cmds(ctx):
     print("\n=== qui Security Commands ===\n!nuke | !kick | !ban | !massdm | !raidmode | !cmds")
 
 # ====================== RUN ======================
-bot.run("MTQ3NTQ5NDQ1OTU0OTY3OTcwMw.GJexCT.XwWqffiKo2GqfmnJZP6Sm6-wi7JaZHtI-DoXQ8")
+bot.run(os.getenv("DISCORD_TOKEN"))
 
