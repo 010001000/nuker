@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "python nuker.py",
+    "restartPolicyType": "ON_FAILURE"
+  }
+}
