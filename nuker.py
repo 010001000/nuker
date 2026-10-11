@@ -17,7 +17,7 @@ YOUR_USER_ID = 668406689958985740
 async def on_ready():
     # Streaming status
     activity = discord.Streaming(
-        name="qui pero galit",
+        name="immaculate swag",
         url="https://www.twitch.tv/qui"  # Change if you want
     )
     await bot.change_presence(activity=activity, status=discord.Status.online)
