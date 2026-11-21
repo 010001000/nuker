@@ -15,7 +15,7 @@ bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 YOUR_USER_ID = 668406689958985740
 
 # Minecraft server (use "ip" or "ip:port")
-MC_SERVER = "tarsmp2.playwithbao.com"  # <-- CHANGE THIS
+MC_SERVER = "tarsmp2.playwithbao.com:38531"  # <-- CHANGE THIS
 
 # Channel IDs (right click channel -> Copy Channel ID, enable Developer Mode first)
 GENERAL_CHANNEL_ID = 1499734536559267850  # <-- #general channel ID
