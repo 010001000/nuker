@@ -15,7 +15,7 @@ bot = commands.Bot(command_prefix="!", intents=intents, help_command=None)
 YOUR_USER_ID = 668406689958985740
 
 # Minecraft server (use "ip" or "ip:port")
-MC_SERVER = "tarsmp2.playwithbao.com:38531"  # <-- CHANGE THIS
+MC_SERVER = "85.211.250.124:38531"  # <-- CHANGE THIS
 
 # Channel IDs (right click channel -> Copy Channel ID, enable Developer Mode first)
 GENERAL_CHANNEL_ID = 1499734536559267850  # <-- #general channel ID
@@ -52,16 +52,15 @@ async def player_count_loop():
         return
 
     try:
-        server = JavaServer.lookup(MC_SERVER)
+        server = JavaServer.lookup(MC_SERVER, timeout=10)
         status = server.status()
         online = status.players.online
         max_players = status.players.max
-
         await channel.send(f"**Minecraft Server Status**\nOnline Players: `{online}/{max_players}`")
     except Exception as e:
-        await channel.send(f"**Minecraft Server Status**\nServer is offline or unreachable.")
-        print(f"[-] MC query failed: {e}")
-
+        print(f"[-] MC query failed: {type(e).__name__}: {e}")
+        await channel.send(f"**Minecraft Server Status**\nServer is offline or unreachable.\n`{type(e).__name__}`")
+        
 @player_count_loop.before_loop
 async def before_player_count():
     await bot.wait_until_ready()
